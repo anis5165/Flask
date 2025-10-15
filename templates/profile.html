@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
+{% extends "home.html" %}
 <head>
-    <title>{{name}} Profile</title>
+    {% block title %}{{name}} Profile {% endblock %}
 </head>
 
 <body>
+    {% block content %} 
     <h1>Hii, {{name}}</h1>
     {% if is_topper%}
     <p>You are Topper.</p>
@@ -20,7 +19,5 @@
             <li>{{subject}}</li>
         {% endfor %}
     </ul>
-
+    {% endblock %}
 </body>
-
-</html>

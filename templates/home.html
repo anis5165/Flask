@@ -15,9 +15,20 @@
                 <li><a href="/login">Login</a></li>
                 <li><a href="/profile">Profile</a></li>
                 <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/register">Register</a></li>
             </ul>
         </nav>
     </header>
+
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, msg in messages %}
+            <p>{{msg}}</p>    
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
 
     {% block content %}
     <main class="bg-yellow-100">
@@ -25,7 +36,6 @@
         <p>This is a home page designed by flask framework</p>
     </main>
     {% endblock %}
-
     <footer>
         <p class="text-sm text-gray-400 bg-gray-500 text-center py-5 mt-20">&copy; COPYRIGHTS RESERVED</p>
     </footer>

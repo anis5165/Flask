@@ -21,13 +21,15 @@
     </header>
 
 
-    {% with messages = get_flashed_messages(with_categories=True) %}
+    <div class="text-center">
+        {% with messages = get_flashed_messages(with_categories=True) %}
     {% if messages %}
         {% for category, msg in messages %}
             <p>{{msg}}</p>    
         {% endfor %}
     {% endif %}
     {% endwith %}
+    </div>
 
 
     {% block content %}
